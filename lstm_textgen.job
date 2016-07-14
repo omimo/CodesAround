@@ -1,0 +1,10 @@
+#!/bin/bash
+#SBATCH -J LSTM_TextGen     # Job name
+#SBATCH -o lstm_textgen_job.o%j # Name of stdout output file(%j expands to jobId) 
+#SBATCH -e lstm_textgen_job.e%j # Name of stderr output file(%j expands to jobId)
+#SBATCH -p normal    # Queue name
+#SBATCH -N 2              # Total number of nodes requested (16 cores/node)
+#SBATCH -n 2              # Total number of mpi tasks requested
+#SBATCH -t 3:00:00       # Run time (hh:mm:ss) - 1.5 hours
+
+python lstm_textgen.py
